@@ -1,0 +1,55 @@
+body {
+    background-color: #287554;
+}
+
+/* .container {
+    width: 600px;
+    margin: auto;
+} */
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+.box {
+    padding: 10px;
+    margin-top: 20px;
+    width: 50%;
+}
+
+.center {
+    margin-left: 25%;
+}
+
+.left {
+    margin-left: 0%;
+}
+
+.right {
+    margin-left: 50%;
+}
+
+.box p {
+    margin: 0px;
+}
+
+.white {
+    background-color: white;
+    border: 5px solid black;
+}
+
+.brown {
+    background-color: #AA5A3A;
+    border: 5px solid #862600;
+}
+
+.ocre {
+    background-color: #AA7A3A;
+    border: 5px solid #864D00;
+}
+
+.blue {
+    background-color: #2A506D;
+    border: 5px dashed #697C8B;
+}

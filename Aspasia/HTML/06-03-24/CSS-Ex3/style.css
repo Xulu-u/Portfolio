@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    background-color: #C6D9EE;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: right;
+}
