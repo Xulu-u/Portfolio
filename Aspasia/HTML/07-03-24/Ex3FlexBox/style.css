@@ -1,0 +1,30 @@
+body {
+    /* font-family: sans-serif;
+    margin: 5px; */
+}
+
+.container {
+    margin: auto;
+    /* display: flex; */
+    background-image: url("https://pablomonteserin.com/wp-content/uploads/2020/06/panteon.jpg");
+    width: 722px;
+    height: 480px;
+    overflow: hidden;
+    /* flex-direction: row; */
+}
+
+.row {
+    display: flex;
+    /* border: 2px solid black; */
+    margin-top: 200px;
+    justify-content: center;
+    gap: 68px;
+}
+
+.col {
+    /* border: 2px solid black; */
+    /* padding: 0px 10px; */
+    width: 70px;
+    height: 186px;
+    overflow: auto;
+}

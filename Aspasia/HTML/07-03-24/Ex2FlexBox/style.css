@@ -58,5 +58,6 @@ body {
 }
 
 .boxtext {
+    overflow: auto;
     padding: 10px;
 }
