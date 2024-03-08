@@ -1,0 +1,66 @@
+div {
+    background: red;
+    border: 5px solid black;
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    transition: 1s;
+}
+
+.translateX:hover {
+    transform: translateX(200px);
+}
+
+.translateY:hover {
+    transform: translateY(200px);
+}
+
+.translate:hover {
+    transform: translate(200px, 200px);
+}
+
+.scaleX:hover {
+    transform: scaleX(0.5);
+}
+
+.scaleY:hover {
+    transform: scaleY(0.5);
+}
+
+.scale:hover {
+    transform: scale(0.5, 0.5);
+}
+
+.rotate:hover {
+    transform: rotate(200deg);
+}
+
+.skewX:hover {
+    transform: skewX(200deg);
+}
+
+.skewY:hover {
+    transform: skewY(200deg);
+}
+
+.myAnimation:hover {
+    animation: move 2s;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+    }
+
+    30% {
+        transform: skew(200deg, 200deg);
+    }
+
+    60% {
+        transform: scale(2, 2);
+    }
+
+    100% {
+        transform: rotate(1300deg);
+    }
+}

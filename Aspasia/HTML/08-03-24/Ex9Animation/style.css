@@ -1,0 +1,10 @@
+span {
+    margin: 100px;
+    text-shadow: 60px 100px 2px green, -60px -20px 2px blue, -60px 100px 2px brown, 60px -20px 2px orange;
+    transition: 1s;
+    font-size: 5rem
+}
+
+span:hover {
+    text-shadow: -60px 100px 2px orange, 60px 20px 2px red, 60px -100px 2px green, -60px -20px 2px blue
+}
