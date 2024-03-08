@@ -1,0 +1,9 @@
+div {
+    background: pink;
+    width: 400px;
+    height: 400px;
+}
+
+div:hover {
+    background: black;
+}

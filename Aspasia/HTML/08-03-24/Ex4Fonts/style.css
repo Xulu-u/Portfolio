@@ -1,0 +1,11 @@
+@font-face {
+    font-family: myFont;
+    src: url("./barett_street/Barett\ Street.ttf")
+}
+
+h1 {
+    font-family: myFont;
+    font-size: 10pc;
+    /* Displacement x, displacement y, blur, color */
+    text-shadow: 20px 20px 20px gray;
+}
