@@ -6,7 +6,7 @@ body {
 .container {
     margin: auto;
     /* display: flex; */
-    background-image: url("https://pablomonteserin.com/wp-content/uploads/2020/06/panteon.jpg");
+    background-image: url("./panteon.jpg");
     width: 722px;
     height: 480px;
     overflow: hidden;
