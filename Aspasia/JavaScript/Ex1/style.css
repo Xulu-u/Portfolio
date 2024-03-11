@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.menu a:hover {
+    background-color: red;
+    width: 300px;
+}
+
+.menu {
+    list-style: none;
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    z-index: 2;
+    margin: 10px;
+}
+
+.menu a {
+    display: block;
+    background-color: aqua;
+    padding: 20px;
+    transition: 0.5s;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+    text-decoration: none;
+}
+
+.right {
+    width: 600px;
+    display: inline-block;
+    vertical-align: top;
+}
