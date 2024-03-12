@@ -184,4 +184,79 @@ function calculaArea(radius) {
 
 let radio = 7
 calculaPerimetro(radio);
-calculaArea(radio); 
+calculaArea(radio);
+
+// Escribe una función echo que devuelva el valor que recibe como parámetro.
+
+function echo(parameter) {
+    return parameter;
+}
+
+// Escribe una función saludar que reciba un parámetro y devuelva el texto «Hola < parametro > !»
+
+function salute(param) {
+    return "Hi " + param;
+}
+
+//Modificar la siguiente función para que devuelva Inside si val está entre 10 y 20 inclusive y Outside en caso contrario.
+
+function isInside(val) {
+    if (val >= 10 && val <= 20) {
+        return "inside";
+    }
+
+    return "outside";
+}
+
+//Añade el operador de igual para que la siguiente función devuelva Equal cuando val sea 12.
+
+function testEqual(val) {
+    if (val === 12) { // Cambia esta línea
+        return "Equal";
+    }
+    return "Not Equal";
+}
+
+//Combina las sentencias if en un único bloque de tipo if/else.
+
+function testElse(val) {
+    let result = "";
+    if (val > 5) {
+        result = "Mayor que 5";
+    }
+
+    else if (val <= 5) {
+        result = "Menor o igual a 5";
+    }
+    return result;
+}
+
+//Combina las sentencias en un único bloque de tipo if/elseif/else.
+
+function testElse(val) {
+    let result = "";
+
+    if (val > 5) {
+        result = "Bigger than 5";
+    }
+
+    else if (val < 5) {
+        result = "Smaller than 5";
+    }
+
+    else result = "Equal to 5";
+    return result;
+}
+
+//Completar la función para que se cumplan las siguientes condiciones:
+
+function testSize(num) {// Quitar esta línea y poner en su lugar la lógica pertinente (bloques de tipo if/else)
+
+    if (num < 5) return "Tiny";
+    else if (num < 10) return "Small";
+    else if (num < 15) return "Medium";
+    else if (num < 20) return "Large";
+    else return "Huge";
+}
+
+
