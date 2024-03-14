@@ -1,0 +1,29 @@
+
+.barra_wrapper {
+    width: 500px;
+    height: 30px;
+    border: 1px solid black;
+  }
+  
+  .rojo {
+    height: 100%;
+    background: red;
+    animation: muevete 1s forwards;
+  }
+  
+  .barrita {
+    background: url(./corazon-mask.png);
+    background-size: auto 100%;
+    height: 100%;
+    width: 100%;
+  }
+  
+  @keyframes muevete {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: 80%;
+    }
+  }

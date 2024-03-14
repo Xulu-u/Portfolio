@@ -1,0 +1,10 @@
+
+@keyframes ilusion {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img {
+  animation: ilusion 2s infinite linear;
+}

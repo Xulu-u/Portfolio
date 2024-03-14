@@ -1,0 +1,22 @@
+
+.barra_wrapper {
+    width: 500px;
+    height: 30px;
+    border: 1px solid black
+}
+
+.barrita {
+    height: 100%;
+    background: green;
+    animation: muevete 1s forwards;
+}
+
+@keyframes muevete {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 80%
+    }
+}
