@@ -1,0 +1,72 @@
+body {
+    background: url(./imatges/bg.gif);
+}
+
+.contenedora {
+    width: 965px;
+    margin: auto;
+    border-radius: 15px;
+    background: white;
+}
+
+.header {}
+
+.row {
+    text-align: center;
+}
+
+.footer {
+    height: 90px;
+}
+
+.col {
+    width: 265px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+    padding: 20px;
+}
+
+.col h2 {
+    color: brown;
+}
+
+.con_margin {
+    margin-top: 30px;
+}
+
+.menu {
+    padding: 0;
+    float: right;
+}
+
+.menu li {
+    float: left;
+    list-style: none;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+}
+
+.menu li a:hover,
+.active {
+    background: #b52025;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.enlaces {
+    width: 500px;
+    float: left;
+    padding-left: 35px;
+}
+
+.titulo {
+    text-align: center;
+}
