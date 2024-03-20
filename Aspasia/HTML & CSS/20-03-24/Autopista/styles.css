@@ -1,0 +1,157 @@
+@font-face {
+    font-family: fuente;
+    src: url(./autopista/Roboto-Thin.ttf);
+}
+
+body {
+    font-family: fuente;
+    background-image: url(./autopista/header.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    background-color: rgba(0, 0, 0, 0.336);
+    position: sticky;
+    top: 0px;
+    width: 100%;
+}
+
+.menu .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu ul {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu ul li {
+    flex-wrap: wrap;
+    margin: 10px 0px;
+    transition: 0.5s;
+    line-height: 2em;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 33px;
+}
+
+.menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.247);
+}
+
+.menu li:not(:last-child) {
+    border-right: 1px solid #749591;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.918);
+    color: rgb(138, 138, 138);
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.content h1 {
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    font-size: 60px;
+}
+
+.content h6 {
+    margin-top: 0px;
+    font-size: 12px;
+}
+
+.content .container {
+    width: 60em;
+    display: flex;
+    justify-content: center;
+    gap: 0px 20px;
+}
+
+.title {
+    flex-direction: column;
+    align-items: center;
+}
+
+.title p {
+    /* width: 60em; */
+    padding-bottom: 20px;
+    text-align: center;
+    border-bottom: 3px solid #bcbcbc;
+}
+
+.content .container .column {
+    text-align: center;
+}
+
+.content .container .column h2 {
+    color: rgb(138, 138, 138);
+}
+
+.content .container .column a {
+    background-color: #72AC80;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.content .container .column2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0 40px;
+    margin-bottom: 0px;
+}
+
+.content .container .column2 .column3 {
+    width: 29em;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .container .column2 .column3 h3 {
+    margin: 10px 0px;
+}
+
+.content .container .column2 .column3 p {
+    margin: 10px 0px;
+}
+
+.foot {
+    color: white;
+    text-align: center;
+    padding: 100px;
+}
+
+.bottom {
+    background-color: #161616;
+    color: white;
+    text-align: center;
+    padding: 50px 100px
+}
+
+.bottom h1 {
+    padding-bottom: 50px;
+}
+
+.bottom h5 {
+    padding-top: 50px;
+    font-weight: 100;
+}
