@@ -1,0 +1,28 @@
+<html>
+
+<body>
+    <canvas width="600" height="600"></canvas>
+
+    <script>
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext('2d');
+
+        //Rectangle
+        context.fillStyle = 'grey'
+        context.fillRect(100, 100, 400, 400);
+
+        //Rectangle border with specific functions
+        context.lineWidth = 4;
+        context.beginPath();
+        context.rect(100, 100, 400, 400);
+        context.stroke();
+
+        //Circle
+        context.beginPath();
+        context.arc(300, 300, 100, 0, Math.PI * 2);
+        context.stroke();
+
+    </script>
+</body>
+
+</html>
