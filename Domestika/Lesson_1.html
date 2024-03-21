@@ -8,8 +8,8 @@
         let context = canvas.getContext('2d');
 
         //Rectangle
-        context.fillStyle = 'grey'
-        context.fillRect(100, 100, 400, 400);
+        // context.fillStyle = 'grey'
+        // context.fillRect(100, 100, 400, 400);
 
         //Rectangle border with specific functions
         context.lineWidth = 4;
@@ -21,6 +21,12 @@
         context.beginPath();
         context.arc(300, 300, 100, 0, Math.PI * 2);
         context.stroke();
+
+        for (let i = 0; i < 5; i++) {
+            context.beginPath();
+            context.rect(100, 100, 60, 60);
+            context.stroke()
+        }
 
     </script>
 </body>

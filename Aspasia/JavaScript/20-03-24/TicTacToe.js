@@ -52,14 +52,16 @@ while (!winner) {
     const p1move = 'X';
     const p2move = 'O';
     const currentPlayer = p1 ? 'Player 1' : 'Player 2'
-    const move = prompt(currentPlayer + ' introduce a number between 1 and 9:');
+    const move = prompt(currentPlayer + ' introduce a number between 0 and 8:');
 
     //NEEDS FIX
-    let boardrow = Math.ceil(move / board.length) - 1;
-    let boardcol = (move % board[boardrow].length) - 1;
+    // p.x = index / 3;
+    // p.y = index % 3;
+    let x = Math.floor(move / 3); //Needs flooring cuz we dont want decimals
+    let y = move % 3;
 
-    if (p1) board[boardrow][boardcol] = p1move;
-    else board[boardrow][boardcol] = p2move;
+    if (p1) board[x][y] = p1move;
+    else board[x][y] = p2move;
 
     if (evaluateWin()) {
         alert('Congratulatoins ' + currentPlayer + '!!!');
@@ -69,7 +71,4 @@ while (!winner) {
         printBoard();
         p1 = !p1;
     }
-
-
-
 }

@@ -1,0 +1,18 @@
+<html>
+
+<body>
+    <canvas width="600" height="600"></canvas>
+
+    <script>
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext('2d');
+
+        context.lineWidth = 4;
+
+        for (let i = 0; i < 5; i++) {
+            context.beginPath(); context.rect(100, 100, 60, 60); context.stroke()
+        }
+    </script>
+</body>
+
+</html>
