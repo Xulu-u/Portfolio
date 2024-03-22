@@ -1,0 +1,132 @@
+body {
+  background: url(https://pablomonteserin.com/res/html5/ex/ejercicios-responsive/mobile-first/resuelto/img/background.png);
+  margin: 0;
+  font-family: arial;
+}
+
+#wrapper {
+  max-width: 980px;
+  margin: 0px auto 0px auto;
+  background: rgba(186, 183, 179, 0.2);
+  position: relative;
+}
+
+header {
+  height: 75px;
+  background: url("https://pablomonteserin.com/res/html5/ex/ejercicios-responsive/mobile-first/resuelto/img/pablomonteserin_small.png") center 0 no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+header a.logo {
+  background: url("https://pablomonteserin.com/res/html5/ex/ejercicios-responsive/mobile-first/resuelto/img/logo_small.png");
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  width: 40px;
+  height: 32px;
+  display: block;
+}
+
+nav {
+  background: #333;
+  margin: 0;
+  text-align: center;
+  display: block;
+  padding: 0;
+}
+
+nav li {
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  padding: 10px;
+  color: black;
+  display: block;
+  text-decoration: none;
+  width: 80%;
+  transition: 1s;
+  color: white;
+  border-bottom: 1px solid grey;
+  margin: 0 auto;
+}
+
+nav a:hover {
+  background: grey;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+article {
+  text-align: center;
+  margin: auto;
+  width: 95%;
+  border-bottom: 1px solid grey;
+}
+
+article p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.promo_container {
+  width: 95%;
+  margin: auto;
+  text-align: center;
+}
+
+.promo {
+  padding-left: 10px;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+
+.promo div {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.img_logo {
+  margin-top: 18.72px;
+  width: 35%;
+  height: 79px;
+  background: red;
+  background: url(https://pablomonteserin.com/res/html5/ex/ejercicios-responsive/mobile-first/resuelto/img/logo_medium.png) no-repeat;
+}
+
+.content {
+  width: 65%;
+  text-align: left;
+}
+
+footer {
+  background: black;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  nav li {
+    display: inline-block;
+  }
+
+  header {
+    background-image: url(./img/pablomonteserin.png);
+    height: 296px;
+  }
+
+  header a.logo {
+    top: 200px;
+  }
+}
