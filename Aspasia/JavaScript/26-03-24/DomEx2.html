@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Hacer un formulario que convierta de grados centígrados a grados Fahrenheit. Para ello deberé multiplicar por 9/5 y
+sumar 32. Tener en cuenta que 30 grados centígrados son 86 grados fahrenheit. -->
+<body>
+
+    <label for="cGrades">Grados centígrados: </label> <input type="text" id="cGrades"> <br />
+    <label for="fGrades">Grados fahrenheit: </label> <input type="text" id="fGrades"><br />
+
+    <button>Calcular</button>
+
+    <script>
+        const calculate = () => {
+            const cGrades = document.querySelector('#cGrades').value;
+            document.querySelector('#fGrades').value = cGrades * 9 / 5 + 32;
+        }
+
+
+        document.querySelector('button').addEventListener('click', calculate);
+    </script>
+</body>
+
+</html>

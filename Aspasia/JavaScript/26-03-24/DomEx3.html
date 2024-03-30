@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Hacer un formulario para solicitar el envío de una caja de cartón. En el formulario podremos especificar las
+características de la caja. -->
+
+<body>
+
+    <label for="clientName">Nombre del cliente:</label><br />
+    <input type="text" id="clientName"> <br /><br />
+
+    <label for="boxMaterial">Material de la caja:</label><br />
+    <select name="" id="boxMaterial">
+        <option value="madera">Madera</option>
+        <option value="hierro">Hierro</option>
+        <option value="plastico">Plástico</option>
+    </select>
+    <br /><br />
+
+    <p>Seleccione unas dimensiones para la caja:</p>
+    <input type="radio" name="boxSize" id="boxSize1" value="diminutas"><label for="boxSize1">Diminutas</label><br />
+    <input type="radio" name="boxSize" id="boxSize2" value="medianas"><label for="boxSize2">Medianas</label><br />
+    <input type="radio" name="boxSize" id="boxSize3" value="grandes"><label for="boxSize3">Grandes</label>
+
+    <br /><br />
+    <label for="comments">Comentarios:</label><br />
+    <textarea id="comments" cols="30" rows="10"></textarea><br /><br />
+
+    <button>Enviar</button><br /><br /><br />
+    <input type="text" id="result" style="width: 600px;">
+
+    <script>
+
+        const calculateBox = () => {
+            const clientName = document.querySelector('#clientName').value;
+            const boxMaterial = document.querySelector('#boxMaterial').value;
+            const boxSize = document.querySelector('input[name="boxSize"]:checked').value;
+            const comments = document.querySelector('#comments').value;
+
+            const msg = `${clientName} ha pedido una caja de ${boxMaterial} con unas dimensiones ${boxSize}. ${comments}`;
+
+            document.querySelector('#result').value = msg;
+        }
+
+        document.querySelector('button').addEventListener('click', calculateBox);
+
+    </script>
+</body>
+
+</html>

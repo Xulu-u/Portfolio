@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- A través de un formulario, el usuario debe introducir un número secreto que estará entre 0 y 5.
+El usuario tendrá tres intentos para acertar el número, si no lo logra, habrá perdido el juego.
+Debemos indicar en un cuadro de texto si el usuario gana, falla el número o pierde. -->
+
+<body>
+    <label for="guess">Guess a random number between 0 to 5 </label> <input type="number" id="guess"> <br />
+    <button>Evaluate</button> <br>
+    <label for="result">Result: </label> <input type="text" id="result"> <br />
+    <script>
+        const max = 5;
+        const min = 0;
+        let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        const evaluate = () => {
+            const guessed = Number(document.querySelector('#guess').value);
+            if (guessed === randomNum) {
+                document.querySelector('#result').value = 'You guessed it: ' + guessed;
+            }
+            else document.querySelector('#result').value = 'Wrong: ' + guessed;
+        }
+
+        document.querySelector('button').addEventListener('click', evaluate);
+    </script>
+</body>
+
+</html>
