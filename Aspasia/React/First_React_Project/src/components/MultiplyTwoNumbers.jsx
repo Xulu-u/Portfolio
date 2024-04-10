@@ -7,8 +7,8 @@ const MultiplyTwoNumbers = ({calculate}) =>{
 
   return (
     <div>
-        <input type="text" onChange={e => setNum1(e.target.value)} />
-        <input type="text" onChange={e => setNum2(e.target.value)} />
+        <input type="text" onChange={e => setNum1(Number(e.target.value))} />
+        <input type="text" onChange={e => setNum2(Number(e.target.value))} />
         <button onClick={() => calculate(num1 * num2)}>Calcular</button>
     </div>
   )

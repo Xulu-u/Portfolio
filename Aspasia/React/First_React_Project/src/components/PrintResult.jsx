@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
-const Result = ({ result }) => {
+const PrintResult = ({ result }) => {
     return (
         <p>Resultado: {result}</p>
     )
 }
 
-Result.propTypes = {
+PrintResult.propTypes = {
     result: PropTypes.number,
 };
 
-export default Result
+export default PrintResult
