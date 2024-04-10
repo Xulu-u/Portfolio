@@ -13,7 +13,7 @@ import MultiplyTwoNumbers from './components/MultiplyTwoNumbers';
 import PrintResult from './components/PrintResult';
 import PlusMinusNum from './components/PlusMinusNum';
 import images from './data/images';
-import { Box } from './app/styles';
+import { Box, BoxChange } from './app/styles';
 
 
 
@@ -52,7 +52,7 @@ function App() {
     </div>
   ))
 
-
+  const [boxColor, setBoxColor] = useState('')
 
   return (
     <>
@@ -130,10 +130,22 @@ function App() {
         {reactLogo}
       </div>
 
-      {/* Ex10 Styles*/}
+      {/* Ex10 StyledComponents*/}
       <div>
         <h2>Ex10 Styled-Components</h2>
-        <Box><p>holaaaaaa</p></Box>
+        <Box $visible={true}>
+          <p>holaaaaaa 
+            <br /> 
+          <span>Adioooooos</span>
+          </p>
+        </Box>
+      </div>
+
+      {/* Ex11 StyledComponents*/}
+      <div>
+        <h2>Ex11 Styled-Components</h2>
+        <button onClick={ () => setBoxColor(!boxColor) }>Cambiar color</button>
+        <BoxChange $color={boxColor}/>
       </div>
     </>
   )
