@@ -14,6 +14,7 @@ import PrintResult from './components/PrintResult';
 import PlusMinusNum from './components/PlusMinusNum';
 import images from './data/images';
 import { Box, BoxChange } from './app/styles';
+import Popup from './components/Pop-up/Pop-up';
 
 
 
@@ -52,7 +53,8 @@ function App() {
     </div>
   ))
 
-  const [boxColor, setBoxColor] = useState('')
+  const [boxColor, setBoxColor] = useState('');
+  const [visible, setVisible] = useState(true);
 
   return (
     <>
@@ -146,6 +148,13 @@ function App() {
         <h2>Ex11 Styled-Components</h2>
         <button onClick={ () => setBoxColor(!boxColor) }>Cambiar color</button>
         <BoxChange $color={boxColor}/>
+      </div>
+
+      {/* Ex12 Popups*/}
+      <div>
+        <h2>Ex12 Styled-Components POPUP 22222</h2>
+        <button onClick={ () => setVisible(!visible) }>Pop-Up</button>
+        <Popup visible={visible} sendVisible = {setVisible}/>
       </div>
     </>
   )
