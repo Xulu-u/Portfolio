@@ -46,3 +46,34 @@ ${mobile} {
 export const Back2 = styled(Back)`
 width: 100%;
 `;
+
+export const Paragraph = styled.p`
+background-color: ${({ilumina}) => ilumina ? 'orange':'transparent'};
+`;
+
+export const Row = styled.div`
+display: flex;
+`;
+
+export const Container = styled.div`
+max-width: 700px;
+margin: auto;
+`
+
+export const Img = styled.img`
+max-width: 100%;
+`
+export const QuestionsPanel = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2rem;
+`
+export const Answer = styled.div`
+display: flex;
+align-items: center;
+gap:15px;
+`
+export const H1 = styled.h1`
+text-align: center;
+`

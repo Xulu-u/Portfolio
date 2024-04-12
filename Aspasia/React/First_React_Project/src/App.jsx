@@ -5,6 +5,7 @@ import './App.css'
 
 import { useRef } from 'react';
 import { useState } from 'react';
+
 import Component_A from './components/component_A';
 import Component_B from './components/component_B';
 import Component_C from './components/component_C';
@@ -12,11 +13,12 @@ import Book from './components/Book';
 import MultiplyTwoNumbers from './components/MultiplyTwoNumbers';
 import PrintResult from './components/PrintResult';
 import PlusMinusNum from './components/PlusMinusNum';
-import images from './data/images';
-import { Box, BoxChange } from './app/styles';
+import images from './assets/data/images';
+import {Answer, Box, BoxChange, Container, Img, Paragraph, QuestionsPanel, Row, H1} from './app/styles';
 import Popup from './components/Pop-up/Pop-up';
-
-
+import lines from './assets/data/teatro.json'
+import trivia from './assets/data/questions'
+import { shuffleArray } from './app/utils';
 
 const ANIMAL_IMAGES = {
   img1: "http://via.placeholder.com/111x111",
@@ -56,6 +58,23 @@ function App() {
   const [boxColor, setBoxColor] = useState('');
   const [visible, setVisible] = useState(true);
 
+  const [currentLine, setCurrentLine] = useState(3);
+
+  const [triviaIndex, setCurrentTriviaIndex] = useState(0);
+  
+  const q = trivia[triviaIndex];
+
+  const handleAnswer = (isRight) => {
+    if (isRight) {
+      setCurrentTriviaIndex(triviaIndex === q.length - 1 ? q.length-1:triviaIndex + 1);
+      triviaIndex === q.length - 1 && alert('muy bien');
+    }
+    else {
+      setCurrentTriviaIndex(triviaIndex === 0 ? 0 : triviaIndex - 1);
+    }
+  }
+
+  
   return (
     <>
     {/* Ex1 UseRef*/}
@@ -100,7 +119,7 @@ function App() {
 
       {/* Ex5 Props (father to child)*/}
       <div>
-        <h2>Ex5 Props (ather to child)</h2>
+        <h2>Ex5 Props (father to child)</h2>
         <Book book="Hyperion" />
       </div>
       <br />
@@ -152,9 +171,38 @@ function App() {
 
       {/* Ex12 Popups*/}
       <div>
-        <h2>Ex12 Styled-Components POPUP 22222</h2>
+        <h2>Ex12 Styled-Components POPUP</h2>
         <button onClick={ () => setVisible(!visible) }>Pop-Up</button>
         <Popup visible={visible} sendVisible = {setVisible}/>
+      </div>
+      <br />
+
+      {/* Ex13 Teatro*/}
+      <div>
+        <h2>Ex13 Teatro</h2>
+        <button onClick = {() => setCurrentLine(currentLine === lines.length - 1 ? lines.length-1 : currentLine + 1)}>Forward</button>
+        <button onClick = {() => setCurrentLine(currentLine ===0 ? 0 : currentLine-1)}>Backwards</button>
+        {
+          lines.map((line, i)=> <Paragraph key={line} onClick = {() => setCurrentLine(i)} ilumina = {i === currentLine}>{line}</Paragraph>)
+        }
+      </div>
+
+      {/* Ex14 Trivial*/}
+      <div>
+        <h2>Ex14 Trivial</h2>
+        <Container>
+          <H1>{q.question}</H1>
+          <Row>
+            <QuestionsPanel>
+              <div>
+                {
+                  shuffleArray(q.answers).map((a, i) => <Answer key={i}><button onClick={()=>handleAnswer(a.isRight)}>X</button>{a.txt}</Answer>)
+                }
+              </div>
+            </QuestionsPanel>
+            <Img src={q.img} alt="" />
+          </Row>
+        </Container>
       </div>
     </>
   )
