@@ -1,9 +1,9 @@
 import america from '../audio/america.mp3';
 import superheroe from '../audio/superheroe.mp3';
 import pajaros from '../audio/pajaros.mp3';
-import americaIMG from '../img/america.png';
-import heroeIMG from '../img/heroe.png';
-import birdsIMG from '../img/birds.png';
+import americaIMG from '../img/trivia/america.png';
+import heroeIMG from '../img/trivia/heroe.png';
+import birdsIMG from '../img/trivia/birds.png';
 
 
 const Questions = [

@@ -14,11 +14,15 @@ import MultiplyTwoNumbers from './components/MultiplyTwoNumbers';
 import PrintResult from './components/PrintResult';
 import PlusMinusNum from './components/PlusMinusNum';
 import images from './assets/data/images';
-import {Answer, Box, BoxChange, Container, Img, Paragraph, QuestionsPanel, Row, H1} from './app/styles';
+import {Answer, Box, BoxChange, Container, Img, Paragraph, QuestionsPanel, Row, H1, WorkoutMenu, WorkoutContainer, WorkoutExercisesContainer, WorkoutExerciseImg} from './app/styles';
 import Popup from './components/Pop-up/Pop-up';
 import lines from './assets/data/teatro.json'
+
 import trivia from './assets/data/questions'
 import { shuffleArray } from './app/utils';
+
+import workouts from './assets/data/workouts'
+import flecha from './assets/img/workouts/flecha.png'
 
 const ANIMAL_IMAGES = {
   img1: "http://via.placeholder.com/111x111",
@@ -61,9 +65,7 @@ function App() {
   const [currentLine, setCurrentLine] = useState(3);
 
   const [triviaIndex, setCurrentTriviaIndex] = useState(0);
-  
   const q = trivia[triviaIndex];
-
   const handleAnswer = (isRight) => {
     if (isRight) {
       setCurrentTriviaIndex(triviaIndex === q.length - 1 ? q.length-1:triviaIndex + 1);
@@ -73,6 +75,11 @@ function App() {
       setCurrentTriviaIndex(triviaIndex === 0 ? 0 : triviaIndex - 1);
     }
   }
+
+  const [workoutIndex, setCurrentWorkoutIndex] = useState(0);
+  const w = workouts[workoutIndex];
+  const [workoutExerciseIndex, setCurrentWorkoutExerciseIndex] = useState(0);
+
 
   
   return (
@@ -203,6 +210,43 @@ function App() {
             <Img src={q.img} alt="" />
           </Row>
         </Container>
+      </div>
+      <br />
+
+      {/* Ex15 Trivial*/}
+      <div>
+        <h2>Ex15 Deporte App</h2>
+        <WorkoutMenu>
+          <button onClick = {() => {
+            setCurrentWorkoutIndex(workoutIndex === 0 ? 0 : workoutIndex - 1);
+            setCurrentWorkoutExerciseIndex(0);
+          }}> 
+            <img src={flecha} alt="" /> 
+          </button>
+          <h1>{w.title}</h1>
+          <button onClick = {() => {
+            setCurrentWorkoutIndex(workoutIndex === workouts.length - 1 ? workouts.length - 1 : workoutIndex + 1);
+            setCurrentWorkoutExerciseIndex(0);
+          }}> 
+            <img className='flip' src={flecha} alt="" /> 
+          </button>
+        </WorkoutMenu>
+
+        <WorkoutContainer>
+          <img className='workout_img_selected' src={w.exercises[workoutExerciseIndex].img} alt="" />
+          <WorkoutExercisesContainer>
+            {
+              w.exercises.map((a,i) => 
+                <div key = {i}>
+                  <WorkoutExerciseImg $isSelected={i===workoutExerciseIndex} onClick={() => setCurrentWorkoutExerciseIndex(i)} className='workout_img' src={a.img} alt={a.name}></WorkoutExerciseImg>
+                  <br />
+                  Repeticiones: {a.reps}
+                </div>)
+            }
+          </WorkoutExercisesContainer>
+          
+        </WorkoutContainer>
+        
       </div>
     </>
   )

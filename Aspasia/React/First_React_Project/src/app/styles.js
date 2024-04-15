@@ -77,3 +77,29 @@ gap:15px;
 export const H1 = styled.h1`
 text-align: center;
 `
+
+export const WorkoutMenu = styled.div`
+display: flex;
+justify-content: center;
+gap: 20px;
+`
+export const WorkoutContainer = styled.div`
+margin-top: 50px;
+display: flex;
+justify-content: center;
+`
+export const WorkoutExercisesContainer = styled.div`
+max-width: 600px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+`
+
+export const WorkoutExerciseImg = styled.img`
+border: ${({$isSelected})=>$isSelected ? '4px solid red':'none'};
+
+&:hover{
+    border: 2px solid red;
+}
+`

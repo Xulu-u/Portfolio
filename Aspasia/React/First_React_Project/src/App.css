@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+/* THAT'S MINE */
+
+.flip{
+  transform: scaleX(-1);
+}
+
+.workout_img_selected {
+  width: 600px;
+  height: 600px;
+}
+.workout_img{
+  width: 200px;
+}
