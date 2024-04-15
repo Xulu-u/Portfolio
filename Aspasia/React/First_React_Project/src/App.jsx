@@ -14,7 +14,7 @@ import MultiplyTwoNumbers from './components/MultiplyTwoNumbers';
 import PrintResult from './components/PrintResult';
 import PlusMinusNum from './components/PlusMinusNum';
 import images from './assets/data/images';
-import {Answer, Box, BoxChange, Container, Img, Paragraph, QuestionsPanel, Row, H1, WorkoutMenu, WorkoutContainer, WorkoutExercisesContainer, WorkoutExerciseImg} from './app/styles';
+import {Answer, Box, BoxChange, Container, Img, Paragraph, QuestionsPanel, Row, H1, WorkoutMenu, WorkoutContainer, WorkoutExercisesContainer, WorkoutExerciseImg, WorkoutSelectedContainer} from './app/styles';
 import Popup from './components/Pop-up/Pop-up';
 import lines from './assets/data/teatro.json'
 
@@ -233,14 +233,19 @@ function App() {
         </WorkoutMenu>
 
         <WorkoutContainer>
-          <img className='workout_img_selected' src={w.exercises[workoutExerciseIndex].img} alt="" />
+          <WorkoutSelectedContainer>
+            <h2>{w.exercises[workoutExerciseIndex].name}</h2>
+            <img className='workout_img_selected' src={w.exercises[workoutExerciseIndex].img} alt="" />
+            <h3>Repeticiones: {w.exercises[workoutExerciseIndex].reps}</h3>
+          </WorkoutSelectedContainer>
+          
           <WorkoutExercisesContainer>
             {
               w.exercises.map((a,i) => 
                 <div key = {i}>
                   <WorkoutExerciseImg $isSelected={i===workoutExerciseIndex} onClick={() => setCurrentWorkoutExerciseIndex(i)} className='workout_img' src={a.img} alt={a.name}></WorkoutExerciseImg>
                   <br />
-                  Repeticiones: {a.reps}
+                  {/* Repeticiones: {a.reps} */}
                 </div>)
             }
           </WorkoutExercisesContainer>

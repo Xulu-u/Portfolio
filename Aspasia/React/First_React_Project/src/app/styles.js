@@ -89,6 +89,7 @@ display: flex;
 justify-content: center;
 `
 export const WorkoutExercisesContainer = styled.div`
+margin-top: 100px;
 max-width: 600px;
 display: flex;
 flex-wrap: wrap;
@@ -102,4 +103,8 @@ border: ${({$isSelected})=>$isSelected ? '4px solid red':'none'};
 &:hover{
     border: 2px solid red;
 }
+`
+export const WorkoutSelectedContainer = styled.div`
+display: flex;
+flex-direction: column;
 `
