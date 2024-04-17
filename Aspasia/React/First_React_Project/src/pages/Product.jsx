@@ -7,9 +7,9 @@ const { id } = useParams();
 
 
     return(
-        <div>    aAAAAAAAAAAAAAA
+        <div>
             <Link to="/product/1">Producto 1</Link>
-                Product {id}
+                <br />Product {id}
         </div>
 )
 }

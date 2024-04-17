@@ -48,7 +48,7 @@ width: 100%;
 `;
 
 export const Paragraph = styled.p`
-background-color: ${({ilumina}) => ilumina ? 'orange':'transparent'};
+background-color: ${({$ilumina}) => $ilumina ? 'orange':'transparent'};
 `;
 
 export const Row = styled.div`

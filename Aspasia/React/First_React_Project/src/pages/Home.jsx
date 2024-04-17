@@ -202,7 +202,7 @@ const pulsado = () => {
         <button onClick = {() => setCurrentLine(currentLine === lines.length - 1 ? lines.length-1 : currentLine + 1)}>Forward</button>
         <button onClick = {() => setCurrentLine(currentLine ===0 ? 0 : currentLine-1)}>Backwards</button>
         {
-          lines.map((line, i)=> <Paragraph key={line} onClick = {() => setCurrentLine(i)} ilumina = {i === currentLine}>{line}</Paragraph>)
+          lines.map((line, i)=> <Paragraph key={line} onClick = {() => setCurrentLine(i)} $ilumina = {i === currentLine}>{line}</Paragraph>)
         }
       </div>
 
@@ -225,7 +225,7 @@ const pulsado = () => {
       </div>
       <br />
 
-      {/* Ex15 Trivial*/}
+      {/* Ex15 Deporte App*/}
       <div>
         <h2>Ex15 Deporte App</h2>
         <WorkoutMenu>

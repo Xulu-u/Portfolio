@@ -6,7 +6,7 @@ const Page2 = () => {
     return(
         <div>    
                 Page2
-                {/* <UseEffectExample></UseEffectExample> */}
+                <UseEffectExample></UseEffectExample>
         </div>
     )
         
