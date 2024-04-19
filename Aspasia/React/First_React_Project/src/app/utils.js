@@ -18,20 +18,13 @@ export const shuffleArray = (array) => {
     return array;
 }
 
-// Obtener la ID del personaje desde la URL de la API de Star Wars
-export const getIdFromUrl = (url) => {
-  const parts = url.split('/');
-  return parts[parts.length - 2]; // Devuelve la penúltima parte de la URL, que es la ID del personaje
-};
+export const getIdFromUrl = (url) => url.substring(url.lastIndexOf('/', url.lastIndexOf('/') - 1) + 1, url.lastIndexOf('/'));
 
-// Generar enlaces de paginación basados en la cantidad total de elementos y elementos por página
-export const getPaginationLinks = (elementsAmount, elementsPerPage) => {
-  const pagesAmount = Math.ceil(elementsAmount / elementsPerPage); // Calcular el número total de páginas
-  const linksData = [];
-  
-  for (let i = 0; i < pagesAmount; i++) {
-    linksData.push(i); // Crear un array de números de página (0, 1, 2, ...)
-  }
-  
-  return linksData;
+export const getPaginationLinks = (elementsAmount, elementsPerPage, firstElement = 1) => {
+    const pagesAmount = elementsAmount / elementsPerPage;
+    const linksData = []
+    for (let i = 0; i < pagesAmount; i++) {
+        linksData.push(firstElement + i);
+    }
+    return linksData;
 };

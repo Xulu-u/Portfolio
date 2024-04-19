@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Back, Back2 } from "../../app/styles"
+import { Back, Back2 } from "../../app/styles/stylesEx"
 
 const Popup = ({visible, sendVisible}) =>{
    return(

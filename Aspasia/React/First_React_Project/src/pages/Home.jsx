@@ -17,7 +17,7 @@ import PrintResult from '../components/PrintResult';
 import PlusMinusNum from '../components/PlusMinusNum';
 import images from '../assets/data/images';
 
-import {Answer, Box, BoxChange, Container, Img, Paragraph, QuestionsPanel, Row, H1, WorkoutMenu, WorkoutContainer, WorkoutExercisesContainer, WorkoutExerciseImg, WorkoutSelectedContainer} from '../app/styles';
+import {Answer, Box, BoxChange, Container, Img, Paragraph, QuestionsPanel, Row, H1, WorkoutMenu, WorkoutContainer, WorkoutExercisesContainer, WorkoutExerciseImg, WorkoutSelectedContainer} from '../app/styles/stylesEx';
 
 import Popup from '../components/Pop-up/Pop-up';
 import lines from '../assets/data/teatro.json'
