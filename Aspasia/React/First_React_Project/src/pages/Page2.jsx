@@ -1,4 +1,4 @@
-import UseEffectExample from "../components/UseEffectExample"
+import UseEffectExample from "../components/Exercises/UseEffectExample"
 
 const Page2 = () => {
 

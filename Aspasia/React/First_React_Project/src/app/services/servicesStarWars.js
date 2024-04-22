@@ -20,8 +20,8 @@ export const getFilmsFromUrls = async (urls) => {
     return r;
 }
 
-// export const getPlanetFromId = (id) => instance.get(`/planets/${id}/`);
+export const getPlanetFromId = (id) => instance.get(`/planets/${id}/`);
 
-// export const getFilmFromId = (id) => instance.get(`/films/${id}/`);
+export const getFilmFromId = (id) => instance.get(`/films/${id}/`);
 
-// export const getSpeciesFromId = (id) => instance.get(`/species/${id}/`);
+export const getSpeciesFromId = (id) => instance.get(`/species/${id}/`);

@@ -36,7 +36,7 @@ const StarWars = () => {
       </Grid>
       {
         Array(pagesAmount).fill().map((page, i) => {
-          return <Link to={"/" + (i + 1)}>{i + 1}</Link>
+          return <Link key={i} to={"/" + (i + 1)}>{i + 1}</Link>
         })
       }
       </div>

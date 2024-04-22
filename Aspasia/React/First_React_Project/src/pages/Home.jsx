@@ -8,13 +8,13 @@ import { useState } from 'react';
 
 // import Router from './app/Router';
 
-import Component_A from '../components/component_A';
-import Component_B from '../components/component_B';
-import Component_C from '../components/component_C';
-import Book from '../components/Book';
-import MultiplyTwoNumbers from '../components/MultiplyTwoNumbers';
-import PrintResult from '../components/PrintResult';
-import PlusMinusNum from '../components/PlusMinusNum';
+import Component_A from '../components/Exercises/component_A';
+import Component_B from '../components/Exercises/component_B';
+import Component_C from '../components/Exercises/component_C';
+import Book from '../components/Exercises/Book';
+import MultiplyTwoNumbers from '../components/Exercises/MultiplyTwoNumbers';
+import PrintResult from '../components/Exercises/PrintResult';
+import PlusMinusNum from '../components/Exercises/PlusMinusNum';
 import images from '../assets/data/images';
 
 import {Answer, Box, BoxChange, Container, Img, Paragraph, QuestionsPanel, Row, H1, WorkoutMenu, WorkoutContainer, WorkoutExercisesContainer, WorkoutExerciseImg, WorkoutSelectedContainer} from '../app/styles/stylesEx';

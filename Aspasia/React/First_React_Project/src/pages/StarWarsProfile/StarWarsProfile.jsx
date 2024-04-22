@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {getCharacterById, getFilmsFromUrls, getSpeciesFromId} from '../../app/services/servicesStarWars';
-import {Row} from '../../app/styles/stylesStarWars';
+import {getCharacterById, getFilmsFromUrls, } from '../../app/services/servicesStarWars';
+import {Row} from './StarWarsProfile.styles';
 
 const StarWarsProfile = () => {
   const { id } = useParams();
   const [characterData, setCharacterData] = useState([]);
   const [films, setFilms] = useState([]);
-  const [species, setSpecies] = useState([]);
 
   useEffect(() => {
     getCharacterById(id).then((data) => {
       setCharacterData(data);
       getFilmsFromUrls(data.films).then(setFilms);
     });
-  }, []);
+  }, [id]);
 
   return (
     <div>
@@ -30,12 +29,6 @@ const StarWarsProfile = () => {
             <ul>
                 {
                     films.map((obj, i) => <li key={i}>{obj.title}</li>)
-                }
-            </ul>
-            <h2>Species</h2>
-            <ul>
-                {
-                    species.map((obj, i) => <li key={i}>{obj.name}</li>)
                 }
             </ul>
           </div>

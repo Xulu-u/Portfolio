@@ -11,6 +11,8 @@ const Layout = ({ children }) => {
                     <li><Link to="/page2" >Page 2</Link></li>
                     <li><Link to="/product" >Product</Link></li>
                     <li><Link to="/starwars" >Star Wars</Link></li>
+                    <li><Link to="/falacias" >Falacias</Link></li>
+                    <li><Link to="/parchis" >Parchis</Link></li>
                 </ul>
             </nav>
             <main>{children}</main>
