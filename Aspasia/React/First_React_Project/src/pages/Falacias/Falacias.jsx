@@ -10,8 +10,7 @@ const Falacias = () => {
     const [options, setOptions] = useState([]);
     
     useEffect(() => {
-        chooseFalacy()
-
+        chooseFalacy();
     }, [])
 
 

@@ -13,6 +13,7 @@ const Layout = ({ children }) => {
                     <li><Link to="/starwars" >Star Wars</Link></li>
                     <li><Link to="/falacias" >Falacias</Link></li>
                     <li><Link to="/parchis" >Parchis</Link></li>
+                    <li><Link to="/firebasetest" >Firebase Test</Link></li>
                 </ul>
             </nav>
             <main>{children}</main>

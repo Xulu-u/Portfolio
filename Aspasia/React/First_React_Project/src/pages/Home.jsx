@@ -38,6 +38,9 @@ const ANIMAL_IMAGES = {
 const reactLogo = '../assets/react.svg'
 
 import { useNavigate } from "react-router-dom";
+import UserProvider from '../app/providers/UserProvider';
+import Login from '../components/ContextAPI/Login';
+import UserInfo from '../components/ContextAPI/UserInfo';
 
 function Home() {
   const num1 = useRef();
@@ -264,6 +267,15 @@ const pulsado = () => {
           
         </WorkoutContainer>
         
+      </div>
+
+      <div>
+        {/* Ex16 Context API*/}
+        <h2>Ex 16 Context API</h2>
+        <UserProvider>
+          <Login></Login>
+          <UserInfo></UserInfo>
+        </UserProvider>
       </div>
     </>
   )

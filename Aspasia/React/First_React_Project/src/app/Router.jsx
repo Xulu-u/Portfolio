@@ -7,6 +7,7 @@ import StarWars from '../pages/StarWars/StarWars';
 import StarWarsProfile from '../pages/StarWarsProfile/StarWarsProfile';
 import Parchis from '../pages/Parchis/Parchis';
 import Falacias from '../pages/Falacias/Falacias';
+import FirebaseTest from '../pages/FirebaseTest/FirebaseTest';
 
 const Router = () => (
     <BrowserRouter>
@@ -25,6 +26,8 @@ const Router = () => (
                 <Route path="/falacias" element={<Falacias/>} />
 
                 <Route path="/parchis" element={<Parchis/>} />
+
+                <Route path="/firebasetest" element={<FirebaseTest/>} />
             </Routes>
         </Layout>
     </BrowserRouter>
