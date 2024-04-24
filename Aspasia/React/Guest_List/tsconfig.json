@@ -1,0 +1,31 @@
+{
+  "display": "Default",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "module": "ESNext",
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2015", "DOM"],
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "resolveJsonModule": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": true,
+
+    "jsxImportSource": "react", // Specifies the import source of JSX-related entities
+  },
+  "include": ["./**/*.ts", "./**/*.tsx" /*<---esto*/, "vite.config.js"],
+  "exclude": ["dist", "build", "node_modules"]
+}
