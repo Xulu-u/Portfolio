@@ -7,7 +7,8 @@ const Delete = () => {
         const [id, setID] = useState<string>('');
         const [items, setItems] = useState<Item[]>([]);
 
-        const consultItems = () => {getItems().then(setItems);}
+        //const consultItems = () => {getItems().then(setItems);}
+        const consultItems = () => getItems().then((data) => setItems(data as Item[]));
 
         //This would be the same but using async/await (then ans async/await do the same thing)
         //const consultItem = async () => {const i = await getItems(); setItems(i);}
