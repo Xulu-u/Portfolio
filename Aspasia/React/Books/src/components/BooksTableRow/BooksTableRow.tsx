@@ -2,12 +2,7 @@ import {useState} from 'react';
 import {Book} from '../../common/types/Book';
 import { deleteBook, updateBook } from '../../app/services/bookApi';
 
-interface BooksTableRowProps {
-    book: Book;
-    renderBooks: () => void;
-}
-
-const BooksTableRow: React.FC<BooksTableRowProps> = ({ book, renderBooks }) =>{
+const BooksTableRow = ({ book, renderBooks }: { book: Book, renderBooks: () => void }) =>{
     const [title, setTitle] = useState<string>(book.title);
     const [price, setPrice] = useState<string>(book.price);
 

@@ -26,7 +26,7 @@ function App() {
   const renderBooks = () => {getBooks().then(setBookList);}
 
   useEffect(() => {
-          renderBooks();
+    renderBooks();
   }, []);
 
   return (
