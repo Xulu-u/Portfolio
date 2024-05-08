@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { User } from "../../common/types/User";
+import { myUser } from "../../common/types/myUser";
 import { access,  } from "../../app/services/usersApi";
-import { useUserIDContext } from '../../app/providers/UserIDProvider';
+import { useUserContext } from '../../app/providers/UserProvider';
 
 const Home = () => {
-        const [user, setUser] = useState<User>({name:''});
-        const {userID, setUserID} = useUserIDContext();
+        const [user, setUser] = useState<myUser>({user:'', id:''});
+        const {myUser, setMyUser} = useUserContext();
 
         const handleUserChange = (event: React.ChangeEvent<HTMLInputElement>) => {
                 setUser({...user, name: event.target.value });

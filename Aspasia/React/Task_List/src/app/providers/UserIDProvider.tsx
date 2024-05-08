@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from 'react';
 
-const AppContext = createContext();
+const AppContext = createContext({userID: undefined, setUserID: () => {}});
 
 export const useUserIDContext = () => useContext(AppContext);
 

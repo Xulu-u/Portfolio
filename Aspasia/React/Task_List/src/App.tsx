@@ -4,4 +4,4 @@ import Router from './app/Router';
 
 const App = () => <UserProvider><Router/></UserProvider>;
 
-export default App
+export default App;
