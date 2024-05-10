@@ -2,22 +2,13 @@ import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signO
 
 import { type QuerySnapshot } from "firebase/firestore";
 
-import { myUser, Task } from "../../common/types/myUser";
+import { myUser} from "../../common/types/myUser";
 
 const userCollectionName = 'users';
-const threadsCollectionName = 'threads';
-const commentsCollectionName = 'comments';
 
 // CREATE
 export const createUser = async(obj:myUser):Promise<string> => {
     const colRef = collection(db, userCollectionName);
-    const data = await addDoc(colRef, obj);
-    return data.id;
-}
-
-// CREATE TASK
-export const createTask = async(idUser:string, obj:Task):Promise<string> => {
-    const colRef = collection(db, userCollectionName, idUser, threadsCollectionName);
     const data = await addDoc(colRef, obj);
     return data.id;
 }
@@ -38,10 +29,35 @@ export const loginWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider).then(async result => {
         const docRef = doc(db, userCollectionName, result.user.uid);
-        await setDoc(docRef, {});
+        await setDoc(docRef, {uid: result.user.uid, email: result.user.email, name: result.user.displayName, password: ''});
         return result.user;
     });
 }
+
+// export const signUp = async (email:string, password:string) => {
+//     try {
+//         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+//         sendEmailVerification(userCredential.user);
+//         const user = userCredential.user;
+//         const docRef = doc(db, userCollectionName, user.uid);
+//         await setDoc(docRef, {uid: user.uid, email: user.email, name: user.displayName,});
+//         return user.uid;
+//     } catch (err) {
+//         return err.message;
+//     }
+// }
+
+// export const signIn = async (email:string, password:string) => {
+//     try {
+//         const result = await signInWithEmailAndPassword(auth, email, password);
+//         return result.user.uid;
+//     } catch (err) {
+//         return err.message;
+//     }
+// }
+
+// export const getCurrentUserId = async () => await auth.currentUser?.uid;
+export const logout = async () => await signOut(auth);
 
 // UPDATE
 export const updateUser = async (id:string, obj:myUser) => {
@@ -62,22 +78,9 @@ export const getUserById = async (id:string) => {
     return result.data();
 }
 
-// READ TASKS
-export const getTasksByUserId = async (userId:string) => {
-    const colRef = collection(db, userCollectionName, userId, 'tasks');
-    const result = await getDocs(colRef);
-    return getArrayFromCollection(result);
-}
-
 // DELETE
 export const deleteUser = async (id:string) => {
     const docRef = doc(db, userCollectionName, id);
-    await deleteDoc(docRef);
-}
-
-//DELETE TASK
-export const deleteTask = async (userId:string, taskId:string) => {
-    const docRef = doc(db, userCollectionName, userId, threadsCollectionName, taskId);
     await deleteDoc(docRef);
 }
 

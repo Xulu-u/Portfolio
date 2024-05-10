@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import {loginWithGoogle} from '../../app/services/usersApi';
 
 const Login: React.FC = () => {
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    // const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     setEmail(e.target.value);
-    // };
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+    };
 
-    // const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     setPassword(e.target.value);
-    // };
+    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPassword(e.target.value);
+    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -22,7 +22,7 @@ const Login: React.FC = () => {
         <div>
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
-                {/* <div>
+                <div>
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
@@ -39,8 +39,8 @@ const Login: React.FC = () => {
                         value={password}
                         onChange={handlePasswordChange}
                     />
-                </div> */}
-                <button type="submit">Login</button>
+                </div>
+                <button type="submit">Login with google</button>
             </form>
         </div>
     );

@@ -1,27 +1,27 @@
 import { useEffect } from 'react';
 import './App.css'
 import Router from './app/Router';
-import { useUserContext } from './app/providers/UserProvider'
+import { useForumUserContext } from './app/providers/ForumUserProvider'
 import { onAuthStateChanged } from 'firebase/auth';
 import { myUser } from './common/types/myUser';
+import Login from './pages/Login/Login';
+import { auth } from './app/services/firebase';
 
 function App() {
-
-  const {user, setUser} = useUserContext();
-
+  const {forumUser, setForumUser} = useForumUserContext();
   useEffect(() => {
     onAuthStateChanged(auth, user => {
         if (user) {
             console.log('user', user, ' userId:', user.uid);
-            setUser({user: user.displayName, id: user.uid} as myUser);
+            setForumUser({username: user.displayName, id: user.uid, email: user.email} as myUser);
         } else {
             console.log("No user logged");
-            setUser(undefined);
+            setForumUser(undefined);
         }
     });
 }, []);
 
-  return user ? <Router/> : <Login/>
+  return forumUser ? <Router/> : <Login/>
 }
 
 export default App

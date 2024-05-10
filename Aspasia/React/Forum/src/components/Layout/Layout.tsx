@@ -7,7 +7,7 @@ const Layout = ({ children} : {children:React.ReactNode}) => {
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/tasks" >Tasks</Link></li>
+                    <li><Link to="/threads" >Threads</Link></li>
                 </ul>
             </nav>
             <main>{children}</main>

@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import Tasks from '../pages/Tasks/Tasks';
+import Threads from '../pages/Threads/Threads';
 import Layout from '../components/Layout/Layout';
 
 const Router = () => (
@@ -8,7 +8,7 @@ const Router = () => (
         <Layout>
             <Routes>
                 <Route index element={<Home />} />
-                <Route path="/tasks" element={<Tasks />} />
+                <Route path="/threads" element={<Threads />} />
             </Routes>
         </Layout>
     </BrowserRouter>

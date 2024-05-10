@@ -1,9 +1,5 @@
 export type myUser = {
-  user: string;
+  username: string;
   id: string;
-};
-
-export type Task = {
-  name: string;
-  id?: string;
+  email: string;
 };
