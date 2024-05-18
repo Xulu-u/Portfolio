@@ -9,11 +9,13 @@ import { createThread, getThreads } from "../../app/services/threadsApi";
 const Threads = () => {
         const {forumUser} = useForumUserContext();
 
-        const [thread, setThread] = useState<Thread>();
         const [threads, setThreads] = useState<Thread[]>([]);
-
-        const [comment, setComment] = useState<string>('');
         const [comments, setComments] = useState<string[]>([]);
+
+        const [title, setTitle] = useState<string>('');
+        const [description, setDescription] = useState<string>('');
+        const [comment, setComment] = useState<string>('');
+        
 
         const handleGetThreads = async () => {
                 try {
@@ -26,8 +28,9 @@ const Threads = () => {
 
         const addThread = async () => {
                 try {
-                        await createThread(thread as Thread);
-                        setThread({title: ''});
+                        await createThread({title: title, description: description, user: forumUser, date: Date.now()} as Thread);
+                        setTitle('');
+                        setDescription('');
                         getThreads();
                 } catch (error) {
                         console.error("Error creating task:", error);
@@ -41,12 +44,31 @@ const Threads = () => {
 
         return(
                 <div>
+                        <h2>Add new thread</h2>
+                        <input
+                                type="text"
+                                placeholder="Title"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                        />
+                        <br />
+                        <input
+                                type="text"
+                                placeholder="Description"
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                        />
+                        <br />
+                        <button onClick={addThread}>Add Thread</button>
+                        <br />
+                        <br />
                         <h1>Threads</h1>
                         {threads.map((thread, index) => (
                                 <div key={index}>
                                         <h2>Thread Title: {thread.title}</h2>
-                                        <p>Description: {thread.content}</p>
+                                        <p>Description: {thread.description}</p>
                                         <h4>By: {thread.user?.username}</h4>
+                                        <h4>At: {thread.date ? new Date(thread.date).toLocaleString() : 'N/A'}</h4> 
                                         <input
                                                 type="text"
                                                 value={comment}
@@ -56,15 +78,6 @@ const Threads = () => {
                                         <button onClick={addComment}>Add Comment</button>
                                 </div>
                                 ))}
-                        <br />
-                        <br />
-                        <input
-                                type="text"
-                                value={thread?.title}
-                                onChange={(e) => setThread({title: e.target.value, user: forumUser})}
-                        />
-                        <br />
-                        <button onClick={addThread}>Add Thread</button>
                 </div>
         )
 }
