@@ -1,21 +1,20 @@
-// Purpose: Contains the Threads component, which is the main page for the application. This component displays the user's name and a list of their tasks. The user can add a new task, delete a task, and log out.
-
 import { useEffect, useState } from "react";
 import { useForumUserContext } from "../../app/providers/ForumUserProvider";
 import { Thread } from "../../common/types/thread";
-import { myUser } from "../../common/types/myUser";
-import { createThread, getThreads } from "../../app/services/threadsApi";
+import { Comment } from "../../common/types/comment";
+import { createComment, createThread, getCommentsByThreadId, getThreads, updateThread } from "../../app/services/threadsApi";
 
 const Threads = () => {
         const {forumUser} = useForumUserContext();
 
         const [threads, setThreads] = useState<Thread[]>([]);
-        const [comments, setComments] = useState<string[]>([]);
+        //const [comments, setComments] = useState<Comment[]>([]);
 
         const [title, setTitle] = useState<string>('');
         const [description, setDescription] = useState<string>('');
-        const [comment, setComment] = useState<string>('');
-        
+
+        const [comments, setComments] = useState({} as {[key: string]: string});
+        //^^This way, each thread has its own comment in the comments state, and typing in one input field won't affect the others.
 
         const handleGetThreads = async () => {
                 try {
@@ -26,17 +25,32 @@ const Threads = () => {
                 }
         }
 
+        const handleCommentChange = (e: React.ChangeEvent<HTMLInputElement>, threadId: string) => {
+                setComments({...comments, [threadId]: e.target.value});
+        };
+
         const addThread = async () => {
                 try {
                         await createThread({title: title, description: description, user: forumUser, date: Date.now()} as Thread);
                         setTitle('');
                         setDescription('');
-                        getThreads();
+                        handleGetThreads();
                 } catch (error) {
-                        console.error("Error creating task:", error);
+                        console.error("Error creating thread:", error);
                 }};
         
-                const addComment = async () => {};
+        const addComment = async (threadId: string) => {
+                try {
+                        if (forumUser) {
+                                await createComment(threadId, {content: comments[threadId], user: forumUser, date: Date.now()} as Comment);
+                                setComments({...comments, [threadId]: ''});
+                                await updateThread(threadId, {comments: await getCommentsByThreadId(threadId)} as Thread);
+                                handleGetThreads();
+                        }
+                } catch (error) {
+                        console.error("Error creating comment:", error);
+                }
+        };
 
         useEffect(() => {
                 handleGetThreads();
@@ -67,15 +81,21 @@ const Threads = () => {
                                 <div key={index}>
                                         <h2>Thread Title: {thread.title}</h2>
                                         <p>Description: {thread.description}</p>
-                                        <h4>By: {thread.user?.username}</h4>
-                                        <h4>At: {thread.date ? new Date(thread.date).toLocaleString() : 'N/A'}</h4> 
+                                        <h4>By: {thread.user?.username} | At: {thread.date ? new Date(thread.date).toLocaleString() : 'N/A'}</h4>
+                                        <h4>Comments:</h4> 
+                                        {thread.comments?.map((comment, index) => (
+                                                <div key={index}>
+                                                        <p>{comment.content} - By: {comment.user?.username} | At: {comment.date ? new Date(comment.date).toLocaleString() : 'N/A'}</p>
+                                                </div>
+                                        ))}
+                                        <br />
                                         <input
                                                 type="text"
-                                                value={comment}
-                                                onChange={(e) => setComment(e.target.value)}
+                                                placeholder="Comment..."
+                                                value={comments[thread.id || -1] || ''}
+                                                onChange={(e) => handleCommentChange(e, thread.id ||'')}
                                         />
-                                        <br />
-                                        <button onClick={addComment}>Add Comment</button>
+                                        <button onClick={() => addComment(thread.id || '')}>Add Comment</button>
                                 </div>
                                 ))}
                 </div>

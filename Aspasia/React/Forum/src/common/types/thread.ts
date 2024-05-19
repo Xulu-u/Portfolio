@@ -1,4 +1,5 @@
 import { myUser } from "./myUser";
+import { Comment } from "./comment";
 
 export type Thread = {
   id?: string;
@@ -6,5 +7,5 @@ export type Thread = {
   description?: string;
   user?: myUser;
   date?: number;
-  comments?: string[];
+  comments?: Comment[];
 };
