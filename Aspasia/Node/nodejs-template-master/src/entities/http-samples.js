@@ -6,6 +6,11 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }));
 
 // CREATE
+// router.post("/", asyncHandler(async (req, res) => {
+//     const { body: { email, username, password } } = req;
+//     await Controller.create({ email, username, password })
+//     res.send('Usuario creado con éxito');
+// }));
 router.post("/", asyncHandler(async (req, res) => {
     const { body: { email, username, password } } = req;
     await Controller.create({ email, username, password })
