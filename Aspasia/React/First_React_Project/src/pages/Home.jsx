@@ -55,7 +55,7 @@ function Home() {
   const [inputText, setInputText] = useState('');
   const [valorAMostrar, setValorAMostrar] = useState(0);
 
-  const [image, setImage] = useState('');
+  const [image, setImage  ] = useState('');
 
   const [result, setResult] = useState(0);
 
